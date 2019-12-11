@@ -5,7 +5,6 @@
     <title>Grocery List</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.js"></script>
@@ -24,57 +23,9 @@
 
 </head>
 <style>
-    /* body {
-      font-size: 20px;;
-      color: #1E2835;
-      background: url("https://img.freepik.com/free-vector/blue-light-sparkles-background-with-copyspace_1017-20091.jpg?size=626&ext=jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      opacity: 20%;
-    }
 
-    #header {
-      text-align: center;
-      margin-top: 10%;
-      width: 50%;
-      padding: 10%;
-      margin-left: 27%;
-    }
-    #showForm {
-        margin-left: 80px;
-      margin-top: 15%;
-      padding: 4%;
-      background-color: antiquewhite;
-      border: 4px;
-      width: 50%;
-    }
-    #add {
-      margin-left:8%;
-      width: 30%;
-      font: 40px;
-    height: 50px;
-    font-size: 20px;
-    }
-
-    #tblItems {
-      text-align: center;
-      background: darkturquoise;
-      font: 20px sans-serif;
-      width: 80%;
-      margin-left: 130px;
-    }
-    
-    #updateForm {
-    margin-left: 280px;
-      margin-top: 10%;
-      padding: 4%;
-      background-color: antiquewhite;
-      border: 4px;
-      width: 60%;
-      color: black;
-    } */
     body {
-			background-image:url("mybg.jpg");
+			background-image:url("https://news.harvard.edu/wp-content/uploads/2019/04/Grocery_Store_Aisle_iStock-961081004_2500.jpg?w=1200&h=800&crop=1");
 			background-size:cover;
 			background-repeat: no-repeat;
 			}
@@ -120,7 +71,7 @@
 			width: 80% !important;
 			margin-left:10%;
 			margin-right: 10%;
-			background-color:grey;
+			background-color:hsla(290,100%,50%,0.3);
 		}
 
 		#title {
@@ -149,7 +100,7 @@
 			
 			
 		}
-		.btnAdd,.ups{
+		.btnAdd,.ups,.btnCan{
 			-webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   background-color:cornflowerblue;
@@ -158,7 +109,7 @@
   font-family: serif;
 
 			}
-			.btnAdd,.ups:hover {
+			.btnAdd,.ups,.btnCan,.addItem {
   background-color: #4CAF50; /* Green */
   color: rgb(255, 255, 255);
 } /* Green */	
@@ -200,30 +151,6 @@
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-.back{
-			
-            display: inline-block;
-            padding: 15px 25px;
-            font-size: 24px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-          }
-          
-          
-          .back:hover {background-color: #3e618e}
-          
-          .back:active {
-            background-color: #3e8e41;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-          }
 .view{
 			
 			display: inline-block;
@@ -253,18 +180,12 @@
 		.edit{
 			background-color: coral;
 			border-radius: 50%;
-			width:30%
+			width:40%
 		}
 		.delete{
 			background-color: darkcyan;
 			border-radius: 50%;
-			width:30%;
-			
-		}
-        .sumUp{
-			background-color:cadetblue;
-			border-radius: 50%;
-			width:30%;
+			width:40%;
 			
 		}
 		h1{
@@ -305,109 +226,20 @@
 		.th{
 			color: #3e4a8e
 		}
-     
-.form {border: 3px solid #f1f1f1;
-background-color: grey;
-width:50%;
-margin-left: 25%}
-
-.input[type=text], .input[type=password] {
-  width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-.button1 {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 2px 0;
-  border: none;
-  cursor: pointer;
-  width: 50%;
-}
-
-.button1:hover {
-  opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container1 {
-  padding: 10px;
-  width:50%;
-  margin-left: 30%
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 50%;
-  }
-}
 		
 	</style>
-
+</style>
 
 <body>
     <div>
         <h1>WELCOME</h1>
-       
     </div>
-    <div id="form" class="form">
-            <h1> Login Form</h1>
-       
+    <div id="First">
+        <center>
 
-            <div class="imgcontainer">
-                <img src="avatar.png" alt="Avatar" class="avatar">
-            </div>
-
-            <div class="container1">
-                <label for="uname"><b>Username</b></label>
-                <input  type="text"class="input" placeholder="Enter Username" name="uname" ><br>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" class="input" placeholder="Enter Password" name="psw" ><br>
-
-                <button class="button1" id="login">Login</button>
-               
-            </div>
-       
-    </div>
-    <div id="First" style="display:none">
-
-        <!-- <button class="back" id="home">Home</button> -->
-        <button type="button" class="addItem" id="add">Add Item</button>
-        <button type="button" class="view" id="viewTab">View Table</button>
-        <button class="view" id="logout">Logout</button>
-
-
+            <button type="button" class="addItem" id="add">Add Item</button>
+            <button type="button" class="view" id="viewTab">View Table</button>
+        </center>
     </div>
     <center>
         <div style="display:none" class="formUp" id="updateForm">
@@ -419,18 +251,17 @@ span.psw {
                         <form>
                             <div class="form-group">
                                 <label id="itemQ">Item Name:</label>
-                                <input type="text" class="form-control" name="itemUpdate" placeholder="Name" value=" "
-                                    required=""><br>
+                                <input type="text" name="itemUpdate" placeholder="Name" value=" " required="" id="itemVal"><br>
                             </div>
                             <div class="form-group">
                                 <label id="itemQ">Item Quantity:</label>
-                                <input type="number" class="form-control" name="quantityUpdate" placeholder="Quantity"
-                                    value="0" min=0 required=""><br>
+                                <input type="number" name="quantityUpdate" placeholder="Quantity" value="0" min=0
+                                    required="" id="quanVal"><br>
                             </div>
                             <div class="form-group">
-                                <label id="itemQ">Item Price:</label>
-                                <input type="number" class="form-control" name="priorityUpdate" placeholder="Price"
-                                    value="0" min="1" required="">
+                                <label id="itemQ">Item Priority:</label><br>
+                                <input type="number" name="priorityUpdate" placeholder="Priority" value="0" min="1" max="3"
+                                    required="" id="prioVal">
                             </div>
                         </form>
                     </div>
@@ -457,8 +288,8 @@ span.psw {
                                 <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Item Quantity" />
                             </div>
                             <div class="form-group">
-                                <label for="priority" id="itemP">Item Price:</label>
-                                <input type="number" class="form-control" id="priority" name="priority" placeholder="Enter Price" />
+                                <label for="priority" id="itemP">Item Priority:</label>
+                                <input type="number" class="form-control" id="priority" name="priority" placeholder="Enter 1-3 " />
                             </div>
                             <button type="submit" class="btnAdd" id="addBtn">Add Item</button>
                             <button type="submit" class="btnCan" id="cancelBtn">Cancel</button>
@@ -478,7 +309,7 @@ span.psw {
                     <tr>
                         <th id="thName" scope="col">Item Name</th>
                         <th id="thQuantity" scope="col">Item Quantity</th>
-                        <th id="thPriority" scope="col">Item Price</th>
+                        <th id="thPriority" scope="col">Item Priority</th>
                         <th id="thActions" scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -486,26 +317,6 @@ span.psw {
                 </tbody>
             </table>
         </div>
-        <!-- <div id="updateForm" style="display:none">
-           
-                <div>
-                    <h3>Update Item</h3>
-                </div>
-                <div>
-                    <div id="users">
-                        <h2>Item name:</h2>
-                        <input type="text">
-                        <h2>Item Quantity:</h2>
-                        <input type="number">
-                        <h2>Item Priority:</h2>
-                        <input type="number">
-                    </div>
-                </div>
-
-            </div>
-
-        </div> -->
-
 
 
     </center>
@@ -515,42 +326,11 @@ span.psw {
 
 
 
-    <!-- Modal -->
-    <!-- <div id="updateForm" style="display:none;margin-top:20px;">
-        
-                <h3>Update Item</h3>
-                <br>
-                <div>
-                    <div>
-                        <div >
-                            <label for="name" id="item">Item Name:</label>
-                            <input type="text" class="form-control" id="name1" name="upitem" placeholder="Enter Item Name" />
-                        </div>
-                        <div >
-                            <label for="quantity" id="itemQ">Item Quantity:</label>
-                            <input type="number" class="form-control" id="quantity1" name="upquantity" placeholder="Enter Item Quantity" />
-                        </div>
-                        <div>
-                            <label for="priority" id="itemP">Item Priority:</label>
-                            <input type="number" class="form-control" id="priority1" name="uppriority" placeholder="Enter 1-3 " />
-                        </div>
-                        <button type="submit" class="btnUp" id="updateBtn">Update Item</button>
-                        <button type="submit" class="btnCan" id="cancelBtn">Cancel</button>
-                    </div>
-                </div>
-
-                <div id="postResultDiv">
-                </div>
-                <br>
-            </div>
-        </div>
-    </div> -->
 </body>
 
 <script>
     $(document).ready(function () {
         $("#left").hide();
-       
         $("#TableGrocery").hide();
         $('#updateForm').hide();
         var status = true;
@@ -572,35 +352,9 @@ span.psw {
         }
 
         retrieveAllData();
-        $("#login").click(function (e) {
-            $("#First").show();
-            $("#form").hide();
-            $("#left").hide();
-            $("#TableGrocery").hide();
-            $('#updateForm').hide();
-
-        })
-        $("#home").click(function (e) {
-            $("#First").hide();
-            $("#form").hide();
-            $("#left").hide();
-            $("#TableGrocery").hide();
-            $('#updateForm').hide();
-
-        })
-        $("#logout").click(function (e) {
-            $("#First").hide();
-            $("#form").show();
-            $("#left").hide();
-            $("#TableGrocery").hide();
-            $('#updateForm').hide();
-
-        })
-
 
         $("#add").click(function (e) {
             $("#left").show();
-            $("#form").hide();
             $('#First').hide();
             $('#TableGrocery').hide();
             $('#updateForm').hide();
@@ -608,7 +362,6 @@ span.psw {
         })
         $("#viewTab").click(function (e) {
             $("#left").hide();
-            $("#form").hide();
             $('#First').show();
             $('#TableGrocery').show();
         })
@@ -652,15 +405,12 @@ span.psw {
             }).text("Update"),
                 $("<button>", {
                     class: "btn btn-secondary delete",
-                }).text("Delete"),
-                $("<button>", {
-                    class: "btn btn-primary sumUp"
-                }).text("Total"),
+                }).text("Delete")
             )
             $(tr).append(
-                $("<td>", { class: "item" }).text(data.item),
-                $("<td>", { class: "quantity" }).text(data.quantity),
-                $("<td>", { class: "priority" }).text(data.priority),
+                $("<td>").text(data.item),
+                $("<td>").text(data.quantity),
+                $("<td>").text(data.priority),
                 $("<td>").append(btns)
             ).appendTo($('tbody'));
         }
@@ -721,9 +471,40 @@ span.psw {
 
 
         $(document).on("click", ".delete", function () {
-            $(this).parent().parent().parent().fadeOut();
-            deleteItem($(this).parent().parent().parent().attr("id"));
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                    $(this).parent().parent().parent().fadeOut();
+                    deleteItem($(this).parent().parent().parent().attr("id"));
+                } else {
+                    Swal.fire(
+                        'Cancel!',
+                        'Your file has been cancel.',
+                        'error'
+                    )
+
+                }
+            })
+
+
+
+
+
         })
+
+
 
         function deleteItem(id) {
             $.ajax({
@@ -744,6 +525,7 @@ span.psw {
             status = false;
             retrieveOneItem($(this).parent().parent().parent().attr("id"));
             updateId = $(this).parent().parent().parent().attr("id");
+            console.log(updateId, "hi");
             $("#updateForm").show();
             $("#TableGrocery").hide();
             $("#First").hide();
@@ -760,27 +542,11 @@ span.psw {
         })
 
 
-        //ndjkhksdljhflsjkhafkljhs
-        $(document).on("click", ".sumUp", function () {
-            var row = $(this).parent().parent().parent().attr("id")
-            // var sum1 =$('#'+row+" td.priority").text();
-            // var sum2 = $('#'+row+" td.quantity").text()
-            // var sum21=parseInt(sum1)*parseInt(sum2);
-            // console.log(sum21)
-            alert("The total of the " + $('#' + row + " td.item").text() + " is " + parseInt($('#' + row + " td.priority").text()) * parseInt($('#' + row + " td.quantity").text()))
-
-            // total($('#'+row+".priority"));
-
-
-        })
-
-        // jfksdhfklj
-
-
         function updateItem(id) {
-            var item = $('input[name="itemUpdate"]');
-            var quantity = $('input[name="quantityUpdate"]');
-            var priority = $('input[name="priorityUpdate"]');
+            var item = $('#itemVal');
+            var quantity = $('#quanVal');
+            var priority = $('#prioVal');
+            console.log(quantity);
             $.ajax({
                 url: "item/update/" + id + "",
                 crossDomain: true,
@@ -790,7 +556,15 @@ span.psw {
                     quantity: quantity.val(),
                     priority: priority.val()
                 },
+
                 success: function (data) {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Success!',
+                        text: "Successfully Updated!",
+                        confirmButtonColor: '#3297a',
+                    })
+
                     console.log(data);
                 },
                 error: function (e) {
@@ -798,7 +572,6 @@ span.psw {
                 }
             })
         }
-
 
         function retrieveOneItem(id) {
             $.ajax({

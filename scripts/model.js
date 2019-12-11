@@ -16,7 +16,7 @@ var Shop = new Schema({
   priority: {
     type: Number,
     min: 1,
-  
+    max: 3,
     required: true
   }
 });
